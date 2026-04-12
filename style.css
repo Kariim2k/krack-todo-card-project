@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: rgb(192, 188, 188);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: #1e293b;
+  color: #e2e8f0;
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.arsenal {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.priority {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.priority.high {
+  background: #dc2626;
+  color: white;
+}
+
+#status {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+time {
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #cbd5f5;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.tags li {
+  background: #334155;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button[data-testid="test-todo-edit-button"] {
+  background: #3b82f6;
+  color: white;
+}
+
+button[data-testid="test-todo-edit-button"]:hover {
+  background: green;
+  color: black
+}
+
+button[data-testid="test-todo-delete-button"] {
+  background: #ef4444;
+  color: white;
+}
+
+button[data-testid="test-todo-delete-button"]:hover {
+  background: red;
+  color: black;
+}
+
+.done h2 {
+  text-decoration: line-through;
+  color: gray;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 10px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
