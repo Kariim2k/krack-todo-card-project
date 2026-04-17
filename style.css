@@ -30,9 +30,34 @@ h2 {
   margin-bottom: 10px;
 }
 
-.arsenal {
-  color: red;
-  font-weight: bold;
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+#expandBtn {
+  width: auto;
+  flex: none;
+  display: inline-block;
+}
+
+.priority-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#priorityIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#priorityText {
+  font-weight: 600;
 }
 
 p {
@@ -131,6 +156,38 @@ input[type="checkbox"] {
   margin-bottom: 10px;
   transform: scale(1.2);
   cursor: pointer;
+}
+
+#editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#editForm label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+#editForm input,
+#editForm textarea,
+#editForm select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+#editForm textarea {
+  min-height: 100px;
+  max-height: 100px;
+  resize: vertical;
+}
+
+#editDue {
+  margin-bottom: 10px;
 }
 
 @media (max-width: 390px) {
