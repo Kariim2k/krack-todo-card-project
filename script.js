@@ -37,8 +37,6 @@ let state = {
   completedAt: null
 };
 
-
-// 🔁 RENDER FUNCTION
 function render() {
   titleEl.innerText = state.title;
   descEl.innerText = isExpanded
@@ -50,22 +48,17 @@ function render() {
 
   checkbox.checked = state.status === "Done";
 
-  // ✅ FIX: update priority text
   if (priorityText) {
     priorityText.innerText = state.priority;
   }
 
-  // priority color
   priorityIndicator.style.background =
     state.priority === "High" ? "red" :
     state.priority === "Medium" ? "orange" : "green";
 
-  // done style
   document.querySelector(".card").classList.toggle("done", state.status === "Done");
 }
 
-
-// ⏱ TIME LOGIC
 function updateTime() {
   if (state.status === "Done") {
     timeRemainingEl.innerText = "Completed";
@@ -96,8 +89,6 @@ function updateTime() {
   }
 }
 
-
-// ✏️ EDIT MODE
 editBtn.onclick = () => {
   isEditing = true;
   viewMode.style.display = "none";
@@ -128,8 +119,6 @@ cancelBtn.onclick = () => {
   editForm.style.display = "none";
 };
 
-
-// 🔄 STATUS SYNC
 checkbox.addEventListener("change", () => {
   state.status = checkbox.checked ? "Done" : "Pending";
   render();
@@ -140,16 +129,12 @@ statusControl.addEventListener("change", () => {
   render();
 });
 
-
-// 🔽 EXPAND
 expandBtn.onclick = () => {
   isExpanded = !isExpanded;
   expandBtn.innerText = isExpanded ? "Collapse" : "Expand";
   render();
 };
 
-
-// 🔁 INIT
 render();
 updateTime();
 setInterval(updateTime, 30000);
