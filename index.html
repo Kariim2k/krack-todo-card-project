@@ -1,49 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Todo Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do Card</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<article data-testid="test-todo-card" class="card">
-  <input type="checkbox" id="complete" data-testid="test-todo-complete-toggle"/>
-  <label for="complete">Mark as done</label>
+  <article data-testid="test-todo-card" class="card">
 
-  <h2 data-testid="test-todo-title">Watch <span class="arsenal">Arsenal</span> win the Premier League</h2>
+    <div id="viewMode">
 
-  <p data-testid="test-todo-title">
-    Since the 03/04 season, Arsenal has not won the Premier League. This season, they are in a very good position to win
-    it. I want to watch them win it live at the Emirates Stadium (maybe not live).
-  </p>
+      <input type="checkbox" id="complete" data-testid="test-todo-complete-toggle" />
+      <label for="complete">Mark as done</label>
 
-  <span data-testid="test-todo-priority" class="priority high">
-    Very High
-  </span>
 
-  <span data-testid="test-todo-status" id="status">
-    Pending
-  </span>
+      <h2 data-testid="test-todo-title">Watch Arsenal win the Premier League</h2>
 
-  <time data-testid="test-todo-due-date" id="dueDate"></time>
+      <div data-testid="test-todo-collapsible-section" id="descSection">
+        <p data-testid="test-todo-description">
+          Since the 03/04 season, Arsenal has not won the Premier League. This season, they are in a very good position
+          to
+          win it.
+          I want to watch them win it live at the Emirates Stadium (maybe not live).
+        </p>
+      </div>
+      <div class="top-row">
+        <button id="expandBtn" data-testid="test-todo-expand-toggle">Expand</button>
 
-  <time data-testid="test-todo-time-remaining" id="timeRemaining" aria-live="polite"></time>
+        <div class="priority-wrapper">
+          <div id="priorityIndicator"></div>
+          <span data-testid="test-todo-priority" id="priorityText">High</span>
+        </div>
+      </div>
 
-  <ul data-testid="test-todo-tags" class="tags">
-    <li data-testid="test-todo-tag-work">Sport</li>
-    <li data-testid="test-todo-tag-urgent">Urgent</li>
-  </ul>
+      <select data-testid="test-todo-status-control" id="statusControl">
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Done</option>
+      </select>
 
-  <div class="actions">
-    <button data-testid="test-todo-edit-button">Edit</button>
-    <button data-testid="test-todo-delete-button">Delete</button>
-  </div>
+      <span data-testid="test-todo-status" id="status">Pending</span>
 
-</article>
+      <time data-testid="test-todo-due-date" id="dueDate"></time>
 
-<script src="./script.js"></script>
+      <div data-testid="test-todo-time-remaining" id="timeRemaining" aria-live="polite"></div>
+      <div data-testid="test-todo-overdue-indicator" id="overdueIndicator"></div>
+
+      <ul data-testid="test-todo-tags" class="tags">
+        <li data-testid="test-todo-tag-work">Sport</li>
+        <li data-testid="test-todo-tag-urgent">Urgent</li>
+      </ul>
+
+      <div class="actions">
+        <button id="editBtn" data-testid="test-todo-edit-button">Edit</button>
+        <button data-testid="test-todo-delete-button">Delete</button>
+      </div>
+    </div>
+
+    <!-- ✅ EDIT MODE -->
+    <form id="editForm" data-testid="test-todo-edit-form" style="display:none;">
+
+      <div>
+        <label>Title</label>
+        <input data-testid="test-todo-edit-title-input" id="editTitle">
+      </div>
+
+      <div>
+        <label>Description</label>
+        <textarea data-testid="test-todo-edit-description-input" id="editDesc"></textarea>
+      </div>
+
+      <label>Priority</label>
+      <select data-testid="test-todo-edit-priority-select" id="editPriority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <label>Due Date</label>
+      <input type="datetime-local" data-testid="test-todo-edit-due-date-input" id="editDue">
+
+      <button type="button" data-testid="test-todo-save-button" id="saveBtn">Save</button>
+      <button type="button" data-testid="test-todo-cancel-button" id="cancelBtn">Cancel</button>
+    </form>
+
+  </article>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
