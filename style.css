@@ -138,13 +138,8 @@ button[data-testid="test-todo-edit-button"]:hover {
 }
 
 button[data-testid="test-todo-delete-button"] {
-  background: #ef4444;
-  color: white;
-}
-
-button[data-testid="test-todo-delete-button"]:hover {
-  background: red;
-  color: black;
+  background: #1e293b;
+  color: #dc2626;
 }
 
 .done h2 {
